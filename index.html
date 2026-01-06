@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSC Economics 2026 Master Guide | Monjurul Haq</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050a14;
+            --card-bg: rgba(20, 30, 48, 0.85);
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00f2ff;
+            --accent-purple: #bc13fe;
+            --accent-green: #0aff60;
+            --accent-yellow: #ffbf00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.15) 0%, transparent 20%);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 4px; }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem 1rem;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hologram-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, var(--accent-cyan), #fff, var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .author-badge {
+            display: inline-block;
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            border-bottom: 2px dashed rgba(255, 191, 0, 0.3);
+            padding-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Chapter Cards */
+        .chapter-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 242, 255, 0.2);
+            border-color: rgba(0, 242, 255, 0.3);
+        }
+
+        .chapter-title {
+            font-size: 1.6rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin-left: 10px;
+        }
+        .topic-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .topic-list li::before {
+            content: '➤';
+            color: var(--accent-cyan);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Creative Question Box */
+        .cq-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed var(--accent-purple);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cq-header {
+            color: var(--accent-purple);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .cq-stimulus {
+            background: #1a1f2e;
+            padding: 1rem;
+            border-left: 3px solid var(--accent-purple);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #162032;
+        }
+        th, td {
+            border: 1px solid #334155;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            color: var(--accent-cyan);
+            text-align: center;
+        }
+        tr:hover { background: rgba(0, 242, 255, 0.05); }
+
+        /* Accordion for Answer */
+        details {
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--accent-cyan);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        summary:hover { background: rgba(0, 242, 255, 0.1); }
+        .answer-content {
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d1d5db;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #02040a;
+        }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-cyan));
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .contact-btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hologram-text { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .chapter-title { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="hologram-text">HSC ECONOMICS 2026</h1>
+        <p style="color: var(--accent-cyan); letter-spacing: 2px;">এক্সক্লুসিভ সাজেশন ও ডিজিটাল গাইডলাইন</p>
+        <div class="author-badge">
+            প্রভাষক মঞ্জুরুল হক (১০ বছরের অভিজ্ঞতাসম্পন্ন)
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <article class="chapter-card" style="border-left: 4px solid var(--accent-yellow);">
+            <h2 class="chapter-title" style="color: var(--accent-yellow);">📊 বোর্ড অনুযায়ী পড়ার বিশেষ কৌশল</h2>
+            <p>প্রতিটি বোর্ডের প্রশ্নের ধরনে সূক্ষ্ম পার্থক্য থাকে। ভালো ফলাফলের জন্য নিচের ছকটি অনুসরণ করো:</p>
+            
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th width="30%">বোর্ড</th>
+                        <th>বিশেষ নির্দেশনা</th>
+                    </tr>
+                    <tr>
+                        <td><strong>ঢাকা বোর্ড</strong></td>
+                        <td>গাণিতিক ও চিত্রভিত্তিক প্রশ্নের ওপর জোর বেশি দেয়। বিশেষ করে ২য় ও ৪র্থ অধ্যায়ের ম্যাথ এবং ৩য় অধ্যায়ের বিধিগুলো ভালো করে পড়বে।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>রাজশাহী ও যশোর বোর্ড</strong></td>
+                        <td>তাত্ত্বিক ব্যাখ্যার ওপর জোর দেয়। ১ম অধ্যায়ের 'অর্থনৈতিক ব্যবস্থা' এবং ১০ম অধ্যায়ের 'কেন্দ্রীয় ব্যাংক' টপিকগুলো গুরুত্বপূর্ণ।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>চট্টগ্রাম ও কুমিল্লা বোর্ড</strong></td>
+                        <td>উদ্দীপক একটু ঘুরিয়ে দেয়। বাজার (৪র্থ অধ্যায়) এবং জাতীয় আয় (৯ম অধ্যায়) এর বিগত ২ বছরের প্রশ্ন সলভ করা জরুরি।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>সিলেট বোর্ড</strong></td>
+                        <td>ক্রমহ্রাসমান প্রান্তিক উপযোগ বিধি এবং ফিশারের সমীকরণ প্রায় প্রতি বছরই আসে।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>অন্যান্য বোর্ড</strong></td>
+                        <td>বিগত ৩ বছরের (২০২৩-২৫) প্রশ্নগুলো সলভ করবে। স্থিতিস্থাপকতা ও AC-MC রেখার সম্পর্ক মাস্ট।</td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+
+        <h2 class="section-title">📌 অধ্যায়ভিত্তিক সাজেশন ও সৃজনশীল</h2>
+
+        <article class="chapter-card">
+            <h2 class="chapter-title">
+                <span>⚡ অধ্যায় ২:</span> ভোক্তা ও উৎপাদকের আচরণ
+            </h2>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <h4 style="color:var(--accent-cyan); margin-bottom:10px;">গুরুত্বপূর্ণ টপিক (Must Read):</h4>
+                <ul class="topic-list">
+                    <li>উপযোগ: মোট ও প্রান্তিক উপযোগের সম্পর্ক, ক্রমহ্রাসমান প্রান্তিক উপযোগ বিধি।</li>
+                    <li>চাহিদা ও যোগান: বিধি, সূচি থেকে রেখা অঙ্কন ও ভারসাম্য।</li>
+                    <li><strong>স্থিতিস্থাপকতা:</strong> গাণিতিক সমস্যা ও দ্রব্যের প্রকৃতি নির্ণয় (সবচেয়ে বেশি গুরুত্বপূর্ণ)।</li>
+                </ul>
+            </div>
+
+            <div class="cq-box">
+                <div class="cq-header">📝 নমুনা সৃজনশীল প্রশ্ন - ১ (স্থিতিস্থাপকতা)</div>
+                <div class="cq-stimulus">
+                    <p>নিচের সূচিটি লক্ষ্য কর:</p>
+                    <table style="background:none; width:auto; margin:0;">
+                        <tr><th>দাম (টাকা)</th><th>চাহিদা (একক)</th></tr>
+                        <tr><td>১০</td><td>১০০</td></tr>
+                        <tr><td>৮</td><td>১৪০</td></tr>
+                    </table>
+                </div>
+                <p>ক. স্থিতিস্থাপকতা কী?<br>
+                খ. চাহিদার দাম স্থিতিস্থাপকতার মান কেন সাধারণত ঋণাত্মক হয়?<br>
+                গ. উদ্দীপকের তথ্যের আলোকে চাহিদার দাম স্থিতিস্থাপকতা নির্ণয় কর।<br>
+                ঘ. প্রাপ্ত স্থিতিস্থাপকতার মানের ভিত্তিতে দ্রব্যের প্রকৃতি বিশ্লেষণ কর।</p>
+
+                <details>
+                    <summary>সমাধান দেখুন</summary>
+                    <div class="answer-content">
+                        <p><strong>(গ) সমাধান:</strong><br>
+                        $E_p = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}$ সূত্র ব্যবহার করে।<br>
+                        এখানে $\Delta P = -২$, $\Delta Q = ৪০$।<br>
+                        মান: $E_p = -২$। (ঋণাত্মক চিহ্ন উহ্য রেখে মান ২)।</p>
+                        <br>
+                        <p><strong>(ঘ) বিশ্লেষণ:</strong><br>
+                        যেহেতু $E_p > 1$ (মান ২), তাই দ্রব্যটি <strong>'বিলাসজাত'</strong>। দাম সামান্য কমলে চাহিদা অনেক বাড়ে।</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <article class="chapter-card">
+            <h2 class="chapter-title">
+                <span>⚙️ অধ্যায় ৩:</span> উৎপাদন, উৎপাদন ব্যয় ও আয়
+            </h2>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <h4 style="color:var(--accent-cyan); margin-bottom:10px;">গুরুত্বপূর্ণ টপিক:</h4>
+                <ul class="topic-list">
+                    <li>উৎপাদন বিধি: ক্রমহ্রাসমান প্রান্তিক উৎপাদন বিধি (কৃষি ও শিল্প)।</li>
+                    <li>ব্যয় ধারণা: AC ও MC এর সম্পর্ক এবং রেখার আকৃতি 'U' শেপ হওয়ার কারণ।</li>
+                </ul>
+            </div>
+
+            <div class="cq-box">
+                <div class="cq-header">📝 নমুনা সৃজনশীল প্রশ্ন - ২ (উৎপাদন বিধি)</div>
+                <div class="cq-stimulus">
+                    <p>১ একর জমিতে শ্রম নিয়োগের ফলে উৎপাদন: ১০, ২২, ৩০, ৩৬ মণ (যথাক্রমে ১, ২, ৩, ৪ জন শ্রমিক)।</p>
+                </div>
+                <p>গ. উদ্দীপকের সূচি থেকে মোট উৎপাদন রেখা অঙ্কন কর।<br>
+                ঘ. উদ্দীপকে কোন বিধিটি কার্যকর হয়েছে? বিশ্লেষণ কর।</p>
+
+                <details>
+                    <summary>সমাধান দেখুন</summary>
+                    <div class="answer-content">
+                        <p><strong>(ঘ) বিশ্লেষণ:</strong><br>
+                        এখানে <strong>'ক্রমহ্রাসমান প্রান্তিক উৎপাদন বিধি'</strong> কার্যকর হয়েছে। শুরুতে প্রান্তিক উৎপাদন বাড়লেও (১০ থেকে ১২), পরবর্তীতে তা কমতে থাকে (১২ -> ৮ -> ৬)। জমির পরিমাণ স্থির থাকায় এমনটি হয়।</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <article class="chapter-card">
+            <h2 class="chapter-title">
+                <span>🛒 অধ্যায় ৪:</span> বাজার (Market)
+            </h2>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <h4 style="color:var(--accent-cyan); margin-bottom:10px;">গুরুত্বপূর্ণ টপিক:</h4>
+                <ul class="topic-list">
+                    <li>পূর্ণপ্রতিযোগিতামূলক বাজার: স্বল্পকালীন ভারসাম্য (স্বাভাবিক, অস্বাভাবিক মুনাফা ও ক্ষতি)।</li>
+                    <li>একচেটিয়া বাজার: স্বল্পকালীন ভারসাম্য।</li>
+                    <li>পার্থক্য: পূর্ণপ্রতিযোগিতা বনাম একচেটিয়া।</li>
+                </ul>
+            </div>
+
+            <div class="cq-box">
+                <div class="cq-header">📝 নমুনা সৃজনশীল প্রশ্ন - ৩ (বাজার ভারসাম্য)</div>
+                <div class="cq-stimulus">
+                    <p>পূর্ণপ্রতিযোগিতামূলক ফার্ম: দাম (P) = ১০, পরিমাণ (Q) = ৫০, গড় ব্যয় (AC) = ৮।</p>
+                </div>
+                <p>গ. ফার্মের মুনাফা নির্ণয় কর।<br>
+                ঘ. দাম কমে ৭ টাকা হলে (AVC=৬ টাকা), উৎপাদন চলবে কি?</p>
+
+                <details>
+                    <summary>সমাধান দেখুন</summary>
+                    <div class="answer-content">
+                        <p><strong>(গ) সমাধান:</strong><br>
+                        মুনাফা = TR - TC = (১০×৫০) - (৮×৫০) = ৫০০ - ৪০০ = ১০০ টাকা (অস্বাভাবিক মুনাফা)।</p>
+                        <br>
+                        <p><strong>(ঘ) বিশ্লেষণ:</strong><br>
+                        নতুন দাম (৭) < AC (৮), তাই লোকসান হবে। কিন্তু দাম (৭) > AVC (৬), তাই স্থির ব্যয় তোলার জন্য <strong>উৎপাদন চালিয়ে যাবে</strong>।</p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <article class="chapter-card" style="border-left: 4px solid var(--accent-green);">
+            <h2 class="chapter-title">📚 অন্যান্য অধ্যায়ের শর্ট সাজেশন</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                
+                <div>
+                    <h3 style="color: var(--accent-cyan); border-bottom: 1px solid #555; padding-bottom: 5px; margin-bottom: 10px;">১ম অধ্যায়: মৌলিক সমস্যা</h3>
+                    <ul class="topic-list" style="font-size: 0.9rem;">
+                        <li>PPC বা উৎপাদন সম্ভাবনা রেখা অঙ্কন।</li>
+                        <li>ধনতান্ত্রিক ও মিশ্র অর্থব্যবস্থার বৈশিষ্ট্য।</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-cyan); border-bottom: 1px solid #555; padding-bottom: 5px; margin-bottom: 10px;">৯ম অধ্যায়: সামগ্রিক আয়-ব্যয়</h3>
+                    <ul class="topic-list" style="font-size: 0.9rem;">
+                        <li>GDP, GNP, NNP এর গাণিতিক সমস্যা।</li>
+                        <li>ভোগ (C) ও সঞ্চয় (S) রেখা অঙ্কন।</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-cyan); border-bottom: 1px solid #555; padding-bottom: 5px; margin-bottom: 10px;">১০ম অধ্যায়: মুদ্রা ও ব্যাংক</h3>
+                    <ul class="topic-list" style="font-size: 0.9rem;">
+                        <li>কেন্দ্রীয় ব্যাংকের ঋন নিয়ন্ত্রণ পদ্ধতি।</li>
+                        <li>বাণিজ্যিক ব্যাংকের ঋণ সৃজন।</li>
+                        <li>ফিশারের বিनिमয় সমীকরণ ($MV = PT$)।</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <div style="background: rgba(188, 19, 254, 0.1); padding: 20px; border-radius: 10px; border: 1px dashed var(--accent-purple); margin-top: 30px; text-align: center;">
+            <h3 style="color: var(--accent-purple);">💡 প্রভাষকের স্পেশাল টিপস</h3>
+            <p style="margin-top: 10px;">অর্থনীতিতে চিত্রের মান অত্যন্ত গুরুত্বপূর্ণ। পেন্সিল দিয়ে শার্প করে চিত্র আঁকবে। গাণিতিক অংশ (বিশেষ করে অধ্যায় ২ ও ৯) উত্তর করলে ছাঁকা নম্বর পাওয়া যায়।</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <h3 style="color: var(--accent-cyan); margin-bottom: 10px;">প্রয়োজনে যোগাযোগ</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">প্রভাষক মঞ্জুরুল হক</p>
+        <p style="color: var(--text-muted);">অর্থনীতি বিভাগ</p>
+        
+        <a href="tel:01715247588" class="contact-btn">📞 কল করুন: 01715247588</a>
+        
+        <div style="margin-top: 3rem; font-size: 0.9rem; color: #555;">
+            &copy; 2026 Developed for Monjurul Haq | All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
